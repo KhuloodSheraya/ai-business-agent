@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpsDesk — Business Copilot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="mark">O</div>
+      <div><strong>OpsDesk</strong><span>Business Copilot</span></div>
+    </div>
+
+    <nav>
+      <button class="nav-item"><span>⌂</span> Overview</button>
+      <button class="nav-item active"><span>✦</span> Copilot</button>
+      <button class="nav-item"><span>▤</span> Invoices</button>
+      <button class="nav-item"><span>◎</span> Activity</button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="environment"><span></span> Local environment</div>
+      <small>FastAPI + Ollama</small>
+    </div>
+  </aside>
+
+  <main class="workspace">
+    <header class="topbar">
+      <div>
+        <p class="kicker">WORKSPACE / COPILOT</p>
+        <h1>Operations Copilot</h1>
+      </div>
+      <div id="apiStatus" class="api-status"><span></span> Checking API</div>
+    </header>
+
+    <section class="content-grid">
+      <div class="copilot-panel">
+        <div class="intro">
+          <div>
+            <p class="label">BUSINESS ASSISTANT</p>
+            <h2>What do you need to know?</h2>
+            <p>Query operational data in plain language. The copilot selects the right business action and returns the result.</p>
+          </div>
+        </div>
+
+        <div class="quick-actions">
+          <button data-prompt="Show me all invoices">View all invoices <b>→</b></button>
+          <button data-prompt="Show overdue invoices">Review overdue <b>→</b></button>
+          <button data-prompt="What is the total of overdue invoices?">Calculate overdue total <b>→</b></button>
+        </div>
+
+        <div id="chat" class="chat">
+          <div class="message assistant">
+            <div class="avatar">OD</div>
+            <div class="message-content">
+              <span class="sender">OpsDesk</span>
+              <div class="bubble">Ready when you are. Try asking about invoices, customers, or outstanding amounts.</div>
+            </div>
+          </div>
+        </div>
+
+        <form id="chatForm" class="composer">
+          <input id="message" autocomplete="off" placeholder="Ask OpsDesk..." required>
+          <button type="submit" aria-label="Send">↑</button>
+        </form>
+      </div>
+
+      <aside class="context-panel">
+        <div class="context-head">
+          <p class="label">CURRENT SESSION</p>
+          <h3>Agent activity</h3>
+        </div>
+
+        <div class="metric">
+          <span>Requests</span>
+          <strong id="requestCount">0</strong>
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="mini-title">LAST ACTION</p>
+        <div id="lastAction" class="action-card empty">
+          <span class="action-icon">↗</span>
+          <div>
+            <strong>No action yet</strong>
+            <p>Your agent activity will appear here.</p>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <p class="mini-title">AVAILABLE CAPABILITIES</p>
+        <div class="capability"><span>01</span><div><strong>Invoice search</strong><p>Find and filter business invoices.</p></div></div>
+        <div class="capability"><span>02</span><div><strong>Invoice summary</strong><p>Calculate counts and totals.</p></div></div>
+      </aside>
+    </section>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
